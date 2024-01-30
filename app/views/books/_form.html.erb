@@ -7,4 +7,16 @@
         <th>Position</th>
         <td><%= f.text_field(:position) %></td>
     </tr>
+    <tr>
+        <th>Author</th>
+        <td><%= f.text_field(:author) %></td>
+    </tr>
+    <tr>
+        <th>Price</th>
+        <td><%= f.text_field(:price) %></td>
+    </tr>
+    <tr>
+        <th>Date Published</th>
+        <td><%= f.date_select :published_date, start_year: Time.now.year - 100, end_year: Time.now.year %></td>
+    </tr>
 </table>
