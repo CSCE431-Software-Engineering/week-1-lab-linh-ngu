@@ -3,6 +3,10 @@
 <div class="books new">
   <h2>Create Book</h2>
 
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, id: "flash_#{name}" %> <br />
+  <% end %>
+
   <%= form_for(@book) do |f| %>
     <% # url: tasks_path, method: 'post' %>
 

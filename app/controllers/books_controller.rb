@@ -19,7 +19,8 @@ class BooksController < ApplicationController
       flash[:notice] = "Book was successfully created."
       redirect_to books_path
     else
-      render('new')
+      flash[:notice] = @book.errors.full_messages.join(", ")
+      redirect_to new_book_path
     end
   end
 
@@ -53,7 +54,10 @@ class BooksController < ApplicationController
   def book_params
     params.require(:book).permit(
       :title, 
-      :position)
+      :position,
+      :author,
+      :price,
+      :published_date)
   end
   
 end
